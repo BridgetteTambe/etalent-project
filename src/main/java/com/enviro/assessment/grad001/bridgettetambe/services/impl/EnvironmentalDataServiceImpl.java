@@ -8,10 +8,12 @@ import com.enviro.assessment.grad001.bridgettetambe.repositories.EnvironmentalDa
 import com.enviro.assessment.grad001.bridgettetambe.repositories.EnvironmentalDataRepository;
 import com.enviro.assessment.grad001.bridgettetambe.services.EnvironmentalDataService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
+
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -29,7 +31,7 @@ public class EnvironmentalDataServiceImpl implements EnvironmentalDataService {
     public EnvironmentalDataRepository environmentalDataRepository;
     public EnvironmentalDataImportFileRepository environmentalDataImportFileRepository;
 
-
+    @Autowired
     public EnvironmentalDataServiceImpl(EnvironmentalDataRepository environmentalDataRepository,
                                         EnvironmentalDataImportFileRepository environmentalDataImportFileRepository) {
         this.environmentalDataRepository = environmentalDataRepository;
